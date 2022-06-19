@@ -3,61 +3,141 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-.nav-container {
- display: flex;
- justify-content: space-between;
- padding: 15px;
+a{
+  text-decoration: none;
+}
+h1{
+  text-transform: capitalize;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+
+
 .title {
- text-transform: capitalize;
- margin: auto 10px;
- font-family: 'Courier New', Courier, monospace;
+  text-transform: capitalize;
+  margin: auto 10px;
+  font-size: 2.4rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-links {
   margin: auto 15px;
   display: none;
- }
- 
- .links li {
+}
+
+.links li {
   display: inline-block;
   margin: 0 5px;
- }
- 
- .links li a {
+}
+
+.links li a {
   color: black;
   text-decoration: none;
   letter-spacing: 2px;
- }
- 
-.nav-logo{
- color: black;
 }
- 
- .nav-logo:hover {
-  transform: rotate(90deg);
+
+.nav-logo a i {
+  color: black;
+}
+
+.nav-logo a i:hover {
+  transform: rotate(180deg);
   transition: all 0.3s ease-in-out;
+  transform-origin: center;
 }
 
 .home-img {
- height: auto;
- width: 80vw;
- display: block;
- margin:  auto;
+  height: auto;
+  width: 80vw;
+  display: block;
+  padding-top: 5rem;
+  margin: auto;
 }
 .img-container {
- /* margin: 0 auto; */
- position: relative;
- align-items: center;
- height: 100%;
+  /* margin: 0 auto; */
+  position: relative;
+  align-items: center;
+  height: auto;
 }
 
 .home-bg {
- width: 110vw;
-  top:-150px;
+  width: 110vw;
+  top: -150px;
   left: -40px;
-  z-index: -1;
+  z-index: -2;
   position: absolute;
+  overflow: hidden;
+}
+
+.home-content p {
+  width: 85%;
+  margin: 3rem auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
+.home-content{
+  text-align: center;
+}
+
+.home-content button {
+  display: inline-block;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: aqua;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.home-page{
+  height: 120vh;
+}
+.active-sites-title{
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.site-card{
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+  background-color: aquamarine;
+  border-radius: 15px;
+  /* padding: 2.5rem; */
+  width: 90%;
+}
+
+.site-card-img{
+  width: 80%;
+}
+.site-card img{
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.site-card-content {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+.site-card-content button{
+  padding: 12px 35px;
+  border-radius: 15px;
+  border: none;
+  background-color: bisque;
+  font-weight: 700;
+  font-size: medium;
+  cursor: pointer;
+}
+.site-card-content p{
+ margin-bottom:2rem ;
+ padding: 0 1.5rem;
+ text-align: left;
 }
