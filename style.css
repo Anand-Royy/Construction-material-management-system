@@ -3,10 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
 }
-h1{
+h1 {
   text-transform: capitalize;
 }
 
@@ -15,8 +15,6 @@ h1{
   justify-content: space-between;
   padding: 15px;
 }
-
-
 
 .title {
   text-transform: capitalize;
@@ -80,7 +78,7 @@ h1{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
 }
-.home-content{
+.home-content {
   text-align: center;
 }
 
@@ -96,48 +94,74 @@ h1{
   font-size: medium;
 }
 
-.home-page{
+.home-page {
   height: 120vh;
 }
-.active-sites-title{
+.active-sites-title {
   text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
-.site-card{
+.site-card {
   display: flex;
   justify-content: space-around;
   margin: 2rem;
-  background-color: aquamarine;
+  background-color: antiquewhite;
   border-radius: 15px;
   /* padding: 2.5rem; */
   width: 90%;
 }
 
-.site-card-img{
+.site-card-img {
   width: 80%;
 }
-.site-card img{
-  width: 100%;
-  border-radius: 1rem;
+.site-card img {
+  width: 80%;
+  height: 100%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .site-card-content {
   width: 100%;
-  margin: auto;
-  text-align: center;
+  margin-top: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  text-align: left;
 }
-.site-card-content button{
+.site-card-content button {
   padding: 12px 35px;
   border-radius: 15px;
+  margin-top: 1rem;
   border: none;
-  background-color: bisque;
+  background-color: rgb(5, 23, 219);
   font-weight: 700;
   font-size: medium;
+  color: white;
   cursor: pointer;
+  margin-left: 13rem;
+  /* text-align: center; */
 }
-.site-card-content p{
- margin-bottom:2rem ;
- padding: 0 1.5rem;
- text-align: left;
+.site-card-content h2 {
+  margin-bottom: 2rem;
+  
+  font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* margin-right: 2rem; */
+  margin-left: 1rem;
+  /* padding: 0 1.5rem; */
+  text-align: left;
+}
+
+.site-card progress{
+  margin-top: 2rem;
+  margin-right: 1rem ;
+}
+
+
+
+.site-card span{
+  margin-top: 2rem;
+  margin-right: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
 }
