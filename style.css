@@ -654,6 +654,70 @@ div {
 
 
 
+  .about_us{
+    display: flex;
+    background: #0577be;
+    color: white;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 50vh;
+}
 
+
+.IEEE-SJCE{
+    width: 20%;
+}
+.IEEE-SJCE h1{
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+
+.contact_us{
+    width: 40%;
+}
+.contact_us h1{
+    font-size: 1.6rem;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.contact_us p{
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+
+
+
+
+.follow_us h1{
+    font-size: 1.6rem;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.follow_us img{
+    display: inline-block;
+    height: 15%;
+    width: 18%;
+    margin: 2%;
+}
+
+
+.footer{
+    background: #0577be;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p{
+    font-size: .8rem;
+    /* padding-top: .6%; */
+    padding-bottom: 1%;
+}
   
 
