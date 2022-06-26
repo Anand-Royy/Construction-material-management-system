@@ -115,13 +115,10 @@ h1 {
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.site-card-img {
-  width: 40%;
-  height: auto;
-}
+
 .site-card img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 100%;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
@@ -176,76 +173,60 @@ h1 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 15px;
 }
-
-
-
-
-
-
-.card {
+.progress {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: 0 20px;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
+  /* margin-right: 2rem;
+  margin-left: 2rem; */
+}
+.outer {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding: 12.5px;
+  margin: auto 1rem;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(225, 225, 225, 0.7);
 }
 
-.card .percent {
-  position: relative;
+.inner {
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(225, 225, 225, 0.7),
+    -0.5px -0.5px 0px rgba(225, 225, 225, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 
-.card svg {
-  position: relative;
-  width: 210px;
-  height: 210px;
-  transform: rotate(-90deg);
+#number {
+  font-weight: 600px;
+  font-size: large;
+  color: #555;
 }
 
-.card svg circle {
-  width: 100px;
-  height: 100px;
+circle {
   fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 10px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 0;
+  animation: progress 2s linear forwards;
+}
+
+svg {
   position: absolute;
-  stroke: #f0f0f0;
-  top: 50%;
-  left: 50%;
-  stroke-width: 10;
-  stroke-linecap: round;
 }
 
-.card svg circle:last-of-type {
-  stroke-dasharray: 625px;
-  stroke-dashoffset: calc(625px - (625px * var(--percent)) / 100);
-  stroke: #3498db; 
-}
-
-.card .number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card .number h3 {
-  font-weight: 200;
-  font-size: 1.5rem;
-}
-
-.card .number h3 span {
-  font-size: 1.5rem;
-}
-
-.card .title h2 {
-  margin: 25px 0 0;
-}
-
-.card:nth-child(1) svg circle:last-of-type {
-  stroke: #f39c12;
-}
-
-.card:nth-child(2) svg circle:last-of-type {
-  stroke: #2ecc71;
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 472;
+  }
+  100% {
+    stroke-dashoffset: 165;
+  }
 }
