@@ -18,7 +18,7 @@ h1{
  display: flex;
  justify-content: space-around;
  align-items: center;
- background-color: gray;
+ background-color: bisque;
  border-radius: 10px;
  width: 80%;
  margin: 15px;
@@ -29,10 +29,18 @@ h1{
 }
 
 .quantity{
- background-color: white;
+ background-color: cyan;
  padding: 5px;
  border-radius: 7px;
+ /* display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: row; */
 }
 .quantity-modify{
  cursor: pointer;
+ margin: 0 5px;
+ font-size: 20px;
+ font-weight: bold;
+
 }
