@@ -17,34 +17,32 @@ setInterval(() => {
 
 
 
-google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Density", { role: "style" } ],
+        ["Copper", 8.94, "#b87333"],
+        ["Silver", 10.49, "silver"],
+        ["Gold", 19.30, "gold"],
+        ["Platinum", 21.45, "color: #e5e4e2"]
+      ]);
 
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Year', 'Number of Projects'],
-          ["2022", 95],
-          ["2021", 31],
-          ["2018", 12],
-          ["2017", 15],
-          ['2016', 3]
-        ]);
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
 
-        var options = {
-          // title: 'Chess opening moves',
-          width: 900,
-          legend: { position: 'none' },
-          // chart: { title: 'Chess opening moves',
-          //          subtitle: 'popularity by percentage' },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          axes: {
-            x: {
-              0: { side: 'top', label: 'Number of Projects'} // Top x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        chart.draw(data, options);
+      var options = {
+        title: "Density of Precious Metals, in g/cm^3",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
       };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
