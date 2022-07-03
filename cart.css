@@ -31,14 +31,13 @@ h1 {
 }
 .mycart {
   margin-bottom: 5rem;
+
   letter-spacing: 5px;
   border-bottom: 2px solid;
 }
 
 .cart-item {
   background-color: rgb(214, 214, 214);
-  /* display: flex; */
-
   display: grid;
   grid-template-columns: 1fr 2fr repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -152,15 +151,19 @@ h1 {
     width: 65%;
     height: 100%;
   }
-  .cart-container{
+  .mycart {
+    position: absolute;
+    top: 0;
+  }
+  .cart-container {
     flex-direction: row;
   }
   .cart-item > img {
-    width: 70px;
     margin-left: 1rem;
   }
   .checkout {
     width: 35%;
     height: 100vh;
   }
+  
 }
