@@ -706,7 +706,7 @@ div {
 }
 
 .img-container img {
-  transform: skew(0deg, -13deg);
+  transform: skew(0deg, 0deg);
   height: 100%;
   width: 100%;
   margin-top: -10%;
