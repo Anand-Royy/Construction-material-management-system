@@ -67,49 +67,51 @@ h1 {
   height: auto;
 }
 
+.home-bg {
+  width: 110vw;
+  top: -150px;
+  left: -40px;
+  z-index: -2;
+  position: absolute;
+  overflow: hidden;
+}
 
-  .home-bg {
-    width: 110vw;
-    top: -150px;
-    left: -40px;
-    z-index: -2;
+@media screen and (min-width: 1120px) {
+  .image-container-web {
+    display: block;
     position: absolute;
-    overflow: hidden;
+    top: 0%;
+    right: -17%;
+    z-index: -1;
   }
-
-  @media screen and (min-width:1120px) {
-    .image-container-web{
-      display: block;
-      position: absolute;
-      top: 0%;
-      right: -17%;
-      z-index: -1;
-    }
-    nav{
-      margin-top: 1rem;
-    }
-    .image-container{
-      display: none;
-    }
-    .title{
-      font-size: 3rem;
-      margin-left: 1rem;
-    }
-    .nav-links{
-      display: block;
-      font-size: 20px;
-      font-weight: bolder;
-      font-family: 'Poppins';
-    }
-    .home-content{
-      width: 40%;
-      margin-top: 14rem;
-      margin-left: 3rem;
-    }
-    .home-content h1{
-      font-size: 3rem;
-    }
+  nav {
+    margin-top: 1rem;
   }
+  .image-container {
+    display: none;
+  }
+  .title {
+    font-size: 3rem;
+    margin-left: 1rem;
+  }
+  .nav-links {
+    display: block;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Poppins';
+  }
+  .nav-logo {
+    display: none;
+  }
+  .home-content {
+    width: 40%;
+    margin-top: 14rem;
+    margin-left: 3rem;
+  }
+  .home-content h1 {
+    font-size: 3rem;
+  }
+}
 
 .home-content p {
   width: 85%;
@@ -141,7 +143,9 @@ h1 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
-
+.sites{
+  width: 100vw;
+}
 .site-card {
   display: flex;
   justify-content: space-around;
@@ -170,7 +174,7 @@ h1 {
 }
 .site-card-content button {
   padding: 12px 35px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 2rem;
   border: none;
   background-color: rgb(5, 23, 219);
@@ -181,7 +185,7 @@ h1 {
   margin-left: 9rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.site-card-content h2 {
+.site-card h2 {
   margin-bottom: 2rem;
 
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
@@ -245,6 +249,35 @@ h1 {
   font-weight: 800;
   font-size: 20px;
   color: #555;
+}
+@media screen and (min-width: 1120px) {
+  .sites{
+    display: flex;
+
+  }
+  .site-card{
+    width: 30%;
+    flex-wrap: wrap;
+  }
+  .site-card h2{
+    margin: 1rem ;
+  }
+  .site-card img{
+    width: 100%;
+    border-radius: 10px;
+  }
+  .site-card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .site-location{
+    margin-bottom: 1.5rem;
+  }
+  .site-card button{
+    margin: 2rem auto;
+  }
 }
 
 circle {
