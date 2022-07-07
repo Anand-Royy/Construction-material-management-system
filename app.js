@@ -1,4 +1,4 @@
-let number = document.querySelectorAll('.number');
+const number = document.querySelectorAll('.number');
 let counter = 0;
 setInterval(() => {
   if (counter == 65) {
