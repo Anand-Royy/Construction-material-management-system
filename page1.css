@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image{
+    height: 60vh;
+    width: 100vw;
+    background-image: url("./Images/site1.jpg");
+    position: relative;
+  margin: .5%;
+}
+
+.image img{
+  height: 100%;
+  width: 100%;
+}
+
+.image h1{
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    font-size: 4rem;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    color: white;
+}
+
+.info{
+    margin: 1.5%;
+    height: 40vh;
+    margin-top: 3%;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.info h2{
+    display: inline-block;
+    margin-top: 1%;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.info p{
+  display: inline-block;
+  margin-top: 2%;
+}
+
+
+.headings h1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8%;
+    margin-bottom: 1%;
+  
+    font-family: 'Fira Sans', sans-serif;
+    color: #242728;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.18rem;
+}
+
+.estimate{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1%;
+    justify-content: space-around;
+    margin: 2%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.est_card{
+    height: 20vh;
+    width: 96%;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    position: relative;
+    margin: 1%;
+
+    justify-content: space-around;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.est_card img{
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    top: 5%;
+    left: 8%;
+}
+
+#name{
+    position: absolute;
+    top: 65%;
+    left: 10%;
+    font-weight: 400;
+}
+
+#estimate{
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+
+#es_p{
+    position: absolute;
+    top: 45%;
+    left: 40%;
+}
+
+#used{
+    position: absolute;
+    top: 15%;
+    left: 70%;
+}
+
+#us_p{
+    position: absolute;
+    top: 45%;
+    left: 70%; 
+}
+
+
+
+
+.curren_status{
+    display: grid;
+    grid-template-columns: repeat(4,1fr); 
+    margin-bottom: 2%; 
+    grid-gap: 1%;
+
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.curr_card{
+  /* border: 2px solid greenyellow; */
+  position: relative;
+  height: 20vh;
+  width: 100%;
+  background-color: rgb(176, 230, 254);
+  border-radius: 20px;
+  margin: 1%;
+
+  font-family: 'Merriweather', serif;
+}
+
+.curr_card img{
+  position: absolute;
+  height: 80px;
+  width: 80px;
+
+  top: 5%;
+  left: 8%;
+  
+}
+.curr_card a img{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+
+  top: 5%;
+  left: 10%;
+}
+
+.curr_card h3{
+  position: absolute;
+
+  top: 70%;
+  left: 12%;
+}
+.curr_card h4{
+  position: absolute;
+
+  top: 22%;
+  left: 46%;
+
+}
+.curr_card p{
+  position: absolute;
+
+  top: 43%;
+  left: 47%;
+
+}
+/* .curr_card a{
+  position: absolute;
+
+  top: 20%;
+  left: 70%;
+} */
+
+.curr_card button{
+  position:absolute;
+
+  top: 35%;
+  left: 73%;
+
+  color: white;
+  background-color: rgba(60, 84, 219, 0.909);
+  border: none;
+
+  height: 5vh;
+  width: 5vw;
+  border-radius: 50px;
+
+  cursor: pointer;
+  
+}
+
+
+
+.about_us {
+    display: flex;
+    background: #04141e;
+    color: white;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 40vh;
+  }
+  
+  .IEEE-SJCE {
+    width: 35%;
+  }
+  .IEEE-SJCE h1 {
+    font-size: 1.6rem;
+    width: 100%;
+  }
+  
+  .contact_us {
+    width: 43%;
+  }
+  .contact_us h1 {
+    font-size: 1.3rem;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  
+  .contact_us p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  
+  .follow_us h1 {
+    font-size: 1.6rem;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  
+  .follow_us img {
+    display: inline-block;
+    height: 15%;
+    width: 18%;
+    margin: 2%;
+  }
+  
+  .footer {
+    background: #04141e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer p {
+    font-size: 0.8rem;
+    /* padding-top: .6%; */
+    padding-bottom: 1%;
+  }
+
+  hr {
+    background-color: #fff;
+    padding: 0;
+    margin: 2%;
+  }
+  
+  hr.hr-1 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
+    );
+  }
+  

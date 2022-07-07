@@ -283,7 +283,7 @@ svg {
   left: 40px;
   width: 2px;
   margin-left: -1.5px;
-  content: '';
+  content: "";
   background-color: #e9ecef;
 }
 .timeline > li {
@@ -291,10 +291,9 @@ svg {
   min-height: 50px;
   margin-bottom: 50px;
 }
-.timeline > li:after,
-.timeline > li:before {
+.timeline > li:after, .timeline > li:before {
   display: table;
-  content: ' ';
+  content: " ";
 }
 .timeline > li:after {
   clear: both;
@@ -332,13 +331,12 @@ svg {
   background-color: #378be4;
 }
 
-.timeline-image img {
+.timeline-image img{
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-.timeline > li .timeline-image h4,
-.timeline > li .timeline-image .h4 {
+.timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
   font-size: 10px;
   line-height: 14px;
   margin-top: 12px;
@@ -363,13 +361,11 @@ svg {
 .timeline > li:last-child {
   margin-bottom: 0;
 }
-.timeline .timeline-heading h4,
-.timeline .timeline-heading .h4 {
+.timeline .timeline-heading h4, .timeline .timeline-heading .h4 {
   margin-top: 0;
   color: inherit;
 }
-.timeline .timeline-heading h4.subheading,
-.timeline .timeline-heading .subheading.h4 {
+.timeline .timeline-heading h4.subheading, .timeline .timeline-heading .subheading.h4 {
   text-transform: none;
 }
 .timeline .timeline-body > ul,
@@ -397,8 +393,7 @@ svg {
     height: 100px;
     margin-left: -50px;
   }
-  .timeline > li .timeline-image h4,
-  .timeline > li .timeline-image .h4 {
+  .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
     font-size: 13px;
     line-height: 18px;
     margin-top: 16px;
@@ -421,8 +416,7 @@ svg {
     height: 150px;
     margin-left: -75px;
   }
-  .timeline > li .timeline-image h4,
-  .timeline > li .timeline-image .h4 {
+  .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
     font-size: 18px;
     line-height: 26px;
     margin-top: 30px;
@@ -443,8 +437,7 @@ svg {
     height: 170px;
     margin-left: -85px;
   }
-  .timeline > li .timeline-image h4,
-  .timeline > li .timeline-image .h4 {
+  .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
     margin-top: 40px;
   }
   .timeline > li.timeline-inverted > .timeline-panel {
@@ -455,20 +448,16 @@ svg {
 .page-section {
   padding: 6rem 0;
 }
-.page-section h2.section-heading,
-.page-section .section-heading.h2 {
+.page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.page-section h3.section-subheading,
-.page-section .section-subheading.h3 {
+.page-section h3.section-subheading, .page-section .section-subheading.h3 {
   font-size: 1rem;
   font-weight: 400;
   font-style: italic;
-  font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin-bottom: 4rem;
 }
 
@@ -479,99 +468,68 @@ svg {
 }
 
 .text-center {
-  text-align: center !important;
+    text-align: center !important;
 }
 
-.page-section h2.section-heading,
-.page-section .section-heading.h2 {
-  font-size: 2.5rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
+.page-section h2.section-heading, .page-section .section-heading.h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 .text-uppercase {
-  text-transform: uppercase !important;
+    text-transform: uppercase !important;
 }
 
-.page-section h3.section-subheading,
-.page-section .section-subheading.h3 {
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  margin-bottom: 4rem;
+.page-section h3.section-subheading, .page-section .section-subheading.h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-bottom: 4rem;
 }
 
 .text-muted {
-  --bs-text-opacity: 1;
-  color: #6c757d !important;
+    --bs-text-opacity: 1;
+    color: #6c757d !important;
 }
 
 p {
-  line-height: 1.75;
+    line-height: 1.75;
 }
 
-@media (min-width: 1400px) {
-  .container-xxl,
-  .container-xl,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
+@media (min-width: 1400px)
+.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
-  }
 }
-@media (min-width: 1200px) {
-  .container-xl,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
+@media (min-width: 1200px)
+.container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1140px;
-  }
 }
-@media (min-width: 992px) {
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
+@media (min-width: 992px)
+.container-lg, .container-md, .container-sm, .container {
     max-width: 960px;
-  }
 }
-@media (min-width: 768px) {
-  .container-md,
-  .container-sm,
-  .container {
+@media (min-width: 768px)
+.container-md, .container-sm, .container {
     max-width: 720px;
-  }
 }
-@media (min-width: 576px) {
-  .container-sm,
-  .container {
+@media (min-width: 576px)
+.container-sm, .container {
     max-width: 540px;
-  }
 }
-.container,
-.container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
-user agent stylesheet div {
-  display: block;
+user agent stylesheet
+div {
+    display: block;
 }
 
 /* Charts */
@@ -601,9 +559,9 @@ user agent stylesheet div {
   letter-spacing: 0.08rem;
 }
 
-.chart {
+#columnchart_values {
   width: 70vh;
-  height: 30vw;
+  height: 0vw;
   margin-left: 11rem;
   margin-bottom: 2rem;
 }
@@ -880,16 +838,16 @@ user agent stylesheet div {
 
 .about_us {
   display: flex;
-  background: #0577be;
+  background: #04141e;
   color: white;
   padding-top: 3%;
   padding-left: 5%;
   padding-right: 5%;
-  height: 50vh;
+  height: 40vh;
 }
 
 .IEEE-SJCE {
-  width: 20%;
+  width: 35%;
 }
 .IEEE-SJCE h1 {
   font-size: 1.6rem;
@@ -897,10 +855,10 @@ user agent stylesheet div {
 }
 
 .contact_us {
-  width: 40%;
+  width: 43%;
 }
 .contact_us h1 {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   width: 100%;
   margin-bottom: 5%;
 }
@@ -924,7 +882,7 @@ user agent stylesheet div {
 }
 
 .footer {
-  background: #0577be;
+  background: #04141e;
   color: white;
   display: flex;
   align-items: center;

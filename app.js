@@ -16,10 +16,10 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Element', 'Density', { role: 'style' }],
-    ['Copper', 8.94, '#b87333'],
-    ['Silver', 10.49, 'silver'],
-    ['Gold', 19.3, 'gold'],
-    ['Platinum', 21.45, 'color: #e5e4e2'],
+    ['2015', 8, '#b87333'],
+    ['2016', 10, 'silver'],
+    ['2017', 19, 'gold'],
+    ['2018', 21, 'color: #e5e4e2'],
   ]);
 
   var view = new google.visualization.DataView(data);
@@ -31,9 +31,9 @@ function drawChart() {
   ]);
 
   var options = {
-    title: 'Density of Precious Metals, in g/cm^3',
-    width: 600,
-    height: 400,
+    title: '',
+    width: 00,
+    height: 500,
     bar: { groupWidth: '95%' },
     legend: { position: 'none' },
   };
