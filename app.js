@@ -15,7 +15,7 @@ google.charts.load('current', { packages: ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-    ['Element', 'Density', { role: 'style' }],
+    ['Year', 'Projects', { role: 'style' }],
     ['2015', 8, '#b87333'],
     ['2016', 10, 'silver'],
     ['2017', 19, 'gold'],
