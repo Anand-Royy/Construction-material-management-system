@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -29,12 +30,12 @@ h1 {
 .nav-links {
   margin: auto 15px;
   display: none;
-  margin-left: 10rem;
+  margin-right: 8rem;
 }
 
 .links li {
   display: inline-block;
-  margin: 0 25px;
+  margin: 0 10px;
 }
 
 .links li a {
@@ -81,8 +82,12 @@ h1 {
     display: block;
     position: absolute;
     top: 0%;
+    /* width: 100vw; */
     right: -17%;
     z-index: -1;
+  }
+  .image-container-web img{
+
   }
   nav {
     margin-top: 1rem;
