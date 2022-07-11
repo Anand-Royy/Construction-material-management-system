@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css " />
+  </head>
+  <body>
+    <div class="home-page">
+      <nav>
+        <div class="nav-container">
+          <!-- title -->
+          <h1 class="title">material managemant</h1>
+          <!-- title-end -->
+          <!-- nav-links -->
+          <div class="nav-links">
+            <ul class="links">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#site">Sites</a>
+              </li>
+              <li>
+                <a href="#timeline">Timeline</a>
+              </li>
+              <li>
+                <a href="#graph">Graph</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+              <a href="#aboutus">About us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- nav-links-end -->
+          <!-- nav-sign -->
+          <div class="nav-logo">
+            <a href="#">
+              <i class="fas fa-bars fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="image-container">
+        <img class="home-img" src="Images/Home_page_img.png" alt="" />
+        <img class="home-bg" src="./Images/Home-page-bg.png" alt="" />
+      </div>
+      <div class="image-container-web">
+        <img src="../Images/Home-page-bg-web.png" alt="">
+      </div>
+      <div class="home-content">
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+          quo, porro aliquid a quae omnis exercitationem amet ipsum, excepturi
+          fugit obcaecati, eaque esse saepe atque! Corrupti, ipsa?
+        </p>
+        <a href="#">
+          <button type="button">Get Started</button>
+        </a>
+      </div>
+    </div>
+
+    <h1  id="site" class="active-sites-title">active-sites</h1>
+    <div  class="sites">
+      <button class="btn modal-btn" >open modal
+        </button>
+      <div class="modal-overlay">
+      <div class="modal-container">
+        <form action="/addsite">
+          <label for="site-id">Site ID: </label>
+          <input type="number" id="site-id" name="id"> <br> <br>
+          <label for="site-name">Site Name: </label>
+          <input type="text" id="site-name" name="name"> <br> <br>
+          <label for="site-address">Site Address: </label>
+          <input type="text" id="site-address" name="address" > <br> <br>
+          <label for="date">Date: </label>
+          <input type="date" id="date" name="date"> <br> <br>  
+          <!-- Estimated quantity -->
+          <label for="">Estimated Quantity:</label> <br> <br>
+          <label for="bricks">Bricks :</label>
+          <input type="number" id="brick" name="brickno">
+          <span>kg</span> <br><br>
+          <label for="cement">Cement :</label>
+          <input type="number" id="cement" name="cementno">
+          <span>kg</span> <br><br>
+          <label for="steel">Steel :</label>
+          <input type="number" id="steel" name="steelno">
+          <span>kg</span> <br><br>
+          <label for="sand">Sand :</label>
+          <input type="number" id="sand" name="sandno">
+          <span>kg</span> <br><br>
+          <label for="aggregate">Aggregate :</label>
+          <input type="number" id="aggregate" name="aggregateno">
+          <span>kg</span> <br><br>
+          <button type="submit" action="/addsite" >Submit</button>
+        </form>
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+
+      </div>
+    </div>
+          {{#if checkmesg}}
+          <h3>Duplicate site!</h3>
+          {{/if}}
+          {{#if mesg}}
+          <h3>Data Inserted</h3>
+          {{/if}}
+      
+      </div>
+    
+
+
+    <section class="page-section" id="about">
+      <div class="container" id="timeline">
+          <div class="text-center">
+              <h2 class="section-heading text-uppercase">Past Events</h2>
+              <h3 class="section-subheading text-muted">Some of Construction Ltd. past events</h3>
+          </div>
+          <ul class="timeline">
+              <li>
+                  <div class="timeline-image"><img class="rounded-circle img-fluid" src="./Images/build1.jpg" alt="..."></div>
+                  <div class="timeline-panel">
+                      <div class="timeline-heading">
+                          <h4>October 2021</h4>
+                          <h4 class="subheading">Emporium</h4>
+                      </div>
+                      <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus blanditiis laudantium temporibus! Nisi a nulla earum ut laborum porro et necessitatibus magnam.
+
+                          The talk was presented by
+                          Dr. Prathosh A.P., Assistant Professor, IISc Bangalore.
+                      </p></div>
+                  </div>
+              </li>
+              <li class="timeline-inverted">
+                  <div class="timeline-image"><img class="rounded-circle img-fluid" src="./Images/build2.jpg" alt="..."></div>
+                  <div class="timeline-panel">
+                      <div class="timeline-heading">
+                          <h4>December 2021</h4>
+                          <h4 class="subheading">Elevate</h4>
+                      </div>
+                      <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim temporibus harum assumenda architecto accusantium quod impedit quisquam voluptatum minus, autem magni rerum repudiandae ipsam voluptates.</p></div>
+                  </div>
+              </li>
+              <li>
+                  <div class="timeline-image"><img class="rounded-circle img-fluid" src="./Images/build3.jpg" alt="..."></div>
+                  <div class="timeline-panel">
+                      <div class="timeline-heading">
+                          <h4>March 2022</h4>
+                          <h4 class="subheading">Housevio</h4>
+                      </div>
+                      <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint minima deserunt dicta hic eius ea consectetur necessitatibus distinctio laudantium perspiciatis.</p></div>
+                  </div>
+              </li>
+              <li class="timeline-inverted">
+                  <div class="timeline-image">
+                      <h4>
+                          Be Part
+                          <br>
+                          Of Our
+                          <br>
+                          Story!
+                      </h4>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </section>
+
+    <!-- Charts -->
+
+    <div class="graph" id="graph">
+      <h1>Our Progress</h1>
+      <hr class="hr-1" />
+    </div>
+
+    <div class="graph_paragraph">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+        perspiciatis praesentium temporibus, eveniet deleniti esse in nihil
+        culpa modi dolorum saepe dolorem quos adipisci laudantium, debitis nobis
+        mollitia. Suscipit, modi!
+      </p>
+    </div>
+
+    <!-- <div id="top_x_div" class="chart"></div> -->
+    
+      <div id="columnchart_values" class="charts" style="width: 900px; height: 300px;"></div>
+    
+    
+
+    <!-- Milestone Projects -->
+
+    <div class="top_projects" id="projects">
+      <h1>Milestone Projects</h1>
+      <hr class="hr-1" />
+    </div>
+
+    <div class="top_projects_paragraph">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
+        sequi. Omnis sint natus voluptate blanditiis delectus sequi obcaecati
+        amet et, autem iste. Dicta, cum omnis odit commodi consequuntur adipisci
+        similique?
+      </p>
+    </div>
+
+    <div class="milestone">
+      <div class="grid">
+        <article>
+          <!-- <img src="" alt="">
+            <div class="text">
+                <h3>Card 1</h3>
+                <p>hubeszdiojhethewhnthowesnhoienshiesthn</p>
+                <button>Button 1</button>
+            </div> -->
+
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="Images/b1.jpg" />
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3><a href="#">Seaview</a></h3>
+              <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, in.</div>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <!-- <img src="" alt="">
+            <div class="text">
+                <h3>Card 1</h3>
+                <p>hubeszdiojhethewhnthowesnhoienshiesthn</p>
+                <button>Button 1</button>
+            </div> -->
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="Images/b2.jpg" />
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3><a href="#">Housopedia</a></h3>
+              <div>We have witnessed first hand perspectives of a .</div>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <!-- <img src="" alt="">
+            <div class="text">
+                <h3>Card 1</h3>
+                <p>hubeszdiojhethewhnthowesnhoienshiesthn</p>
+                <button>Button 1</button>
+            </div> -->
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="Images/b3.jpg" />
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3><a href="#">Bastion</a></h3>
+              <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis commodi tempora quo.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <!-- <img src="" alt="">
+            <div class="text">
+                <h3>Card 1</h3>
+                <p>hubeszdiojhethewhnthowesnhoienshiesthn</p>
+                <button>Button 1</button>
+            </div> -->
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="Images/b4.jpg" />
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3><a href="#">Persona</a></h3>
+              <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, similique.
+              </div>
+            </div>
+          </div>
+        </article>
+
+       
+    </div>
+
+    <!-- Persons -->
+
+    <div class="mentors">
+      <h1>Board of Directors</h1>
+      <hr class="hr-1" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis,
+        fugit.
+      </p>
+    </div>
+
+    <div class="wrapper">
+      <div class="our_team">
+        <div class="team_member">
+          <div class="member_img">
+            <img src="./Images/p2.jpg" alt="our_team" />
+            <div class="social_media">
+              <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+              <div class="twitter item"><i class="fab fa-twitter"></i></div>
+              <div class="instagram item"><i class="fab fa-instagram"></i></div>
+            </div>
+          </div>
+          <h3>M G VEENA</h3>
+          <span>CEO</span>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p> -->
+        </div>
+        <div class="team_member">
+          <div class="member_img">
+            <img src="./Images/p1.jpg" alt="our_team" />
+            <div class="social_media">
+              <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+              <div class="twitter item"><i class="fab fa-twitter"></i></div>
+              <div class="instagram item"><i class="fab fa-instagram"></i></div>
+            </div>
+          </div>
+          <h3>SUDARSHAN P K</h3>
+          <span>CHIEF ENGINEER</span>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p> -->
+        </div>
+        <div class="team_member">
+          <div class="member_img">
+            <img src="./Images/p3.jpg" alt="our_team" />
+            <div class="social_media">
+              <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+              <div class="twitter item"><i class="fab fa-twitter"></i></div>
+              <div class="instagram item"><i class="fab fa-instagram"></i></div>
+            </div>
+          </div>
+          <h3>S B RUDRASWAMY</h3>
+          <span>MARKETING HEAD</span>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- About Us -->
+
+    <div class="about_us" id="aboutus">
+      <div class="IEEE-SJCE">
+        <h1>Construction Ltd.</h1>
+      </div>
+      <div class="contact_us">
+        <h1>ADDRESS</h1>
+        <p>
+          
+          Sri Jayachamarajendra College of Engineering
+          <br />
+          Mysuru, 570006
+          <br />
+          Phone: +(91) 6205701439
+          <br />
+          Email: Construction Ltd.@gmail.com
+        </p>
+      </div>
+
+      <div class="follow_us">
+        <h1>FOLLOW US</h1>
+        <a href=""><img src="./Images/instagram.png" alt="" /></a>
+          <a href=""><img src="./Images/facebook.png" alt="" /></a>
+          <a href=""><img src="./Images/linkedIn.png" alt="" /></a>
+          <a href=""><img src="./Images/youtube.png" alt="" /></a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <!-- <hr> -->
+      <p>
+        Copyrights © 2022 Construction Ltd. | Developed by the WBD Board at Construction Ltd.
+      </p>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
