@@ -74,8 +74,50 @@
 
     <h1  id="site" class="active-sites-title">active-sites</h1>
     <div  class="sites">
-      <button class="btn modal-btn" >open modal
-        </button>
+      {{#data}}
+        <!-- card -->
+      <div class="site-card">
+        <div class="site-card-img">
+          <img src="./Images/pexels-lukas-rodriguez-3559235.jpg" alt="" />
+        </div>
+        <h2> {{name}}</h2>
+        <div class="site-card-content">
+          <div class="site-location">
+            <span>Location :</span>
+            <span> {{address}} </span>
+          </div>
+          
+          <div class="progress">
+          <div class="outer">
+            <div class="inner">
+              <div class="number">65%</div>
+            </div>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            width="160px"
+            height="160px"
+          >
+            <defs>
+              <linearGradient id="GradientColor">
+                <stop offset="0%" stop-color="#e91e63" />
+                <stop offset="100%" stop-color="#673ab7" />
+              </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+          </svg>
+        </div>
+        <a href="">
+          <a href="./page1.html">
+          <button type="button" >Visit</button>
+        </a>
+        </a>
+      </div>
+      </div>
+      <!-- card-end -->
+      
+      {{/data}}
       <div class="modal-overlay">
       <div class="modal-container">
         <form action="/addsite">
@@ -110,13 +152,18 @@
 
       </div>
     </div>
+      
+      </div>
+      <div class="add-site">
+
+      <button class="btn modal-btn" >add site
+        </button>
           {{#if checkmesg}}
           <h3>Duplicate site!</h3>
           {{/if}}
           {{#if mesg}}
           <h3>Data Inserted</h3>
           {{/if}}
-      
       </div>
     
 

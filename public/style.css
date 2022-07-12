@@ -154,6 +154,7 @@ h1 {
 .site-card {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   margin: 2rem;
   background-color: antiquewhite;
   border-radius: 15px;
@@ -302,6 +303,17 @@ h1 {
   
 }
 
+.add-site{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  text-align: center;
+}
+.add-site h3{
+  margin-top: 2rem;
+  color: red;
+}
+
 .btn {
   text-transform: uppercase;
   background: transparent;
@@ -315,7 +327,7 @@ h1 {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
   margin: auto;
 }
 .btn:hover {
