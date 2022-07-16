@@ -1,19 +1,20 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const mysql = require('mysql');
 const app = express();
+const fileupload = require('express-fileupload');
+// app.engine(
+//   '.hbs',
+//   exphbs.engine({ extname: '.hbs', defaultLayout: '', layoutsDir: '' })
+// );
 
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(fileupload());
 
 //configuration
 app.set('view engine', 'hbs');
 app.set('views', './view');
 app.use(express.static(__dirname + '/public'));
-
+app.use(express.static('upload'));
 //Create connection
 const db = mysql.createConnection({
   host: 'localhost',
@@ -30,33 +31,22 @@ db.connect((err) => {
   console.log('MySql Connected...');
 });
 //Create DB
-app.get('/', (req, res) => {
-  res.render('index');
+app.get('', (req, res) => {
+  db.query('SELECT * FROM sites', (err, rows) => {
+    if (!err) {
+      res.render('index', { rows });
+    }
+  });
 });
 
-// app.get('/createdb', (req, res) => {
-//   let sql = 'CREATE DATABASE DBMS_Project';
-//   db.query(sql, (err, result) => {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send('Database created...');
-//   });
-// });
-
-// //Create table
-// app.get('/createsitetable', (req, res) => {
-//   let sql =
-//     'CREATE TABLE sites(id int AUTO_INCREMENT, name VARCHAR(255), address VARCHAR(255), site_date int, brickno int, cementno int, steelno int, sandno int, aggregteno int, PRIMARY KEY (id))';
-//   db.query(sql, (err, result) => {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send('Posts table created');
-//   });
-// });
-
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
+app.get('/viewsite/:id', (req, res) => {
+  const id = req.params.id;
+  db.query('SELECT * FROM sites WHERE id =?', [id], (err, rows) => {
+    if (!err) {
+      res.render('page1', { rows });
+    }
+  });
+});
 
 app.get('/addsite', (req, res) => {
   // fetching data from form
@@ -71,6 +61,7 @@ app.get('/addsite', (req, res) => {
     steelno,
     sandno,
     aggregateno,
+    img,
   } = req.query;
 
   // Sanitization XSS...
@@ -82,7 +73,7 @@ app.get('/addsite', (req, res) => {
         res.render('index', { checkmesg: true });
       } else {
         // insert query
-        let qry2 = 'insert into sites values(?,?,?,?,?,?,?,?,?)';
+        let qry2 = 'insert into sites values(?,?,?,?,?,?,?,?,?,?)';
         db.query(
           qry2,
           [
@@ -95,16 +86,47 @@ app.get('/addsite', (req, res) => {
             steelno,
             sandno,
             aggregateno,
+            img,
           ],
           (err, results) => {
             if (err) throw err;
             else if (results.affectedRows > 0) {
-              res.render('index', { mesg: true, data: results });
+              res.render('index', { mesg: true });
             }
           }
         );
       }
     }
+  });
+  res.render('index');
+});
+
+app.post('/addsite', (req, res) => {
+  let sampleFile;
+  let uploadPath;
+  const id = req.params.id;
+  console.log(id);
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded');
+  }
+
+  sampleFile = req.files.sampleFile;
+  uploadPath = __dirname + '/upload/' + sampleFile.name;
+  console.log(sampleFile);
+  sampleFile.mv(uploadPath, function (err) {
+    if (err) return res.status(500).send(err);
+    res.send('File uploaded');
+    db.query(
+      'update sites set site-img = ? where id = ?',
+      [sampleFile.name, id],
+      (err, rows) => {
+        if (!err) {
+          res.redirect('/');
+        } else {
+          console.log(err);
+        }
+      }
+    );
   });
 });
 

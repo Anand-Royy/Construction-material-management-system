@@ -348,6 +348,7 @@ h1 {
 @media screen and (min-width: 1120px) {
   .sites {
     display: flex;
+    flex-wrap: wrap;
   }
   .site-card {
     width: 30%;
@@ -357,7 +358,7 @@ h1 {
     margin: 1rem;
   }
   .site-card img {
-    width: 100%;
+    width: 60%;
     border-radius: 10px;
   }
   .site-card-content {
@@ -447,7 +448,7 @@ svg {
 }
 .timeline > li .timeline-image {
   position: absolute;
-  z-index: 100;
+  /* z-index: 100; */
   left: 0;
   width: 80px;
   height: 80px;
