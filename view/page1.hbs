@@ -1,4 +1,5 @@
 <html lang='en'>
+
   <head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -21,31 +22,32 @@
 
     <title>Site Page</title>
   </head>
+
   <body>
 
     <!-- Image section -->
-{{#rows}}
-    <div class='image'>
-      <h1>{{this.name}}</h1>
-      <img src='/Images/site1.jpg' alt='' />
-    </div>
-    <form action="/addsiteimg" action="POST" enctype="multipart/form-data">
-    <input type="file" name="sampleFile" accept="image/*">
-    <button type="submit" action="/addsite">Submit</button>
-    </form>
-    <!-- Info section -->
-    <div class='info'>
-      <h2>Address:{{this.address}}</h2>
-      <br />
-      <h2>Date:{{this.date}}</h2>
-      <br />
-      <h2>Additional info:</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
-        odit vero, ipsa libero modi quasi minus quisquam similique odio,
-        incidunt qui tempore quia perspiciatis dolor maiores! Omnis quam
-        doloribus magnam.</p>
-    </div>
-{{/rows}}
+    {{#rows}}
+      <div class='image'>
+        <h1>{{this.name}}</h1>
+        <img src='/Images/site1.jpg' alt='' />
+      </div>
+      <form action='/addsiteimg' action='POST' enctype='multipart/form-data'>
+        <input type='file' name='sampleFile' accept='image/*' />
+        <button type='submit' action='/addsiteimg'>Submit</button>
+      </form>
+      <!-- Info section -->
+      <div class='info'>
+        <h2>Address:{{this.address}}</h2>
+        <br />
+        <h2>Date:{{this.date}}</h2>
+        <br />
+        <h2>Additional info:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+          odit vero, ipsa libero modi quasi minus quisquam similique odio,
+          incidunt qui tempore quia perspiciatis dolor maiores! Omnis quam
+          doloribus magnam.</p>
+      </div>
+    {{/rows}}
     <!-- Estimate card section -->
 
     <div class='headings'>
@@ -106,85 +108,83 @@
       <h1>Current status of materials</h1>
       <hr class='hr-1' />
     </div>
-
     <div class='curren_status'>
       <div class='curr_card'>
         <img src='/Images/Bricks.png' alt='' />
-        <h3>Name</h3>
+        <h3>Bricks</h3>
         <h4>Stock</h4>
         <p>1245</p>
-        <!-- <a href="">
-                <img src="./Images/Add_to_cart.png" alt="cart_icon">
-            </a> -->
-        <a href='/cart.html'>
-          <button>ADD+</button>
+
+        <a href='/addcartitem/1'>
+          <button class='addcart'>ADD+</button>
         </a>
       </div>
 
       <div class='curr_card'>
         <img src='/Images/Bricks.png' alt='' />
-        <h3>Name</h3>
+        <h3>Cement</h3>
         <h4>Stock</h4>
         <p>1245</p>
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
-        <a href='/cart.html'>
-          <button>ADD+</button>
+        <a href='/addcartitem/2'>
+          <button class='addcart'>ADD+</button>
         </a>
+
       </div>
 
       <div class='curr_card'>
         <img src='/Images/Bricks.png' alt='' />
-        <h3>Name</h3>
+        <h3>Steel</h3>
         <h4>Stock</h4>
         <p>1245</p>
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
-        <a href='/cart.html'>
-          <button>ADD+</button>
+
+        <a href='/addcartitem/3'>
+          <button class='addcart'>ADD+</button>
         </a>
+
       </div>
 
       <div class='curr_card'>
         <img src='/Images/Bricks.png' alt='' />
-        <h3>Name</h3>
+        <h3>Sand</h3>
         <h4>Stock</h4>
         <p>1245</p>
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
-        <a href='/cart.html'>
-          <button>ADD+</button>
+
+        <a href='/addcartitem/4'>
+          <button class='addcart'>ADD+</button>
         </a>
+
       </div>
 
       <div class='curr_card'>
         <img src='/Images/Bricks.png' alt='' />
-        <h3>Name</h3>
+        <h3>Aggregate</h3>
         <h4>Stock</h4>
         <p>1245</p>
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
-        <a href='/cart.html'>
-          <button>ADD+</button>
+        <a href='/addcartitem'>
+          <a href='/addcartitem/5'>
+            <button class='addcart'>ADD+</button>
+          </a>
         </a>
+
       </div>
 
-      <div class='curr_card'>
-        <img src='/Images/Bricks.png' alt='' />
-        <h3>Name</h3>
-        <h4>Stock</h4>
-        <p>1245</p>
-        <!-- <a href="">
-                <img src="./Images/Add_to_cart.png" alt="cart_icon">
-            </a> -->
-        <a href='/cart.html'>
-          <button>ADD+</button>
-        </a>
-      </div>
+    </div>
+    <div class='cartbtndiv'>
+      <a href='/cart'>
+        <button class='cartbtn'>Add to Cart</button>
+      </a>
     </div>
 
     <!-- Footer -->
@@ -223,6 +223,7 @@
         Construction Ltd.
       </p>
     </div>
-
+    <script src='/site.js'></script>
   </body>
+
 </html>

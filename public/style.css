@@ -349,16 +349,21 @@ h1 {
   .sites {
     display: flex;
     flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
   }
   .site-card {
-    width: 30%;
+    width: 20%;
     flex-wrap: wrap;
+    text-align: center;
   }
   .site-card h2 {
-    margin: 1rem;
+    margin: 1rem auto;
+    text-transform: capitalize;
   }
   .site-card img {
-    width: 60%;
+    width: 95%;
+    margin: auto;
     border-radius: 10px;
   }
   .site-card-content {
@@ -366,12 +371,19 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
   .site-location {
+    margin: 0 auto;
+    text-align: center;
     margin-bottom: 1.5rem;
   }
   .site-card button {
     margin: 2rem auto;
+    margin-left: 6rem;
+  }
+  .progress{
+    margin-left: 5.5rem;
   }
 }
 

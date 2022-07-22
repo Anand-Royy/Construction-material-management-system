@@ -290,4 +290,16 @@
       rgba(0, 0, 0, 0)
     );
   }
-  
+  .cartbtndiv{
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .cartbtn{
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    display: none;
+    border: none;
+    border-radius: 10px;
+  }

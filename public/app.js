@@ -1,13 +1,25 @@
 const number = document.querySelectorAll('.number');
 let counter = 0;
-setInterval(() => {
-  if (counter == 65) {
-    clearInterval();
-  } else {
-    counter += 1;
-    number.innerHTML = counter + '%';
-  }
-}, 30);
+console.log('hello');
+console.log(number);
+number.forEach(function (numbers) {
+  setInterval(() => {
+    if (counter == 65) {
+      clearInterval();
+    } else {
+      counter += 1;
+      numbers.innerHTML = counter + '%';
+    }
+  }, 30);
+});
+// setInterval(() => {
+//   if (counter == 65) {
+//     clearInterval();
+//   } else {
+//     counter += 1;
+//     number[0].innerHTML = counter + '%';
+//   }
+// }, 30);
 
 // Debojyoti's code
 
