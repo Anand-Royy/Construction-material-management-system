@@ -126,33 +126,27 @@ h1 {
 .dropdown li:hover {
   background-color: grey;
 }
-.checkout {
-  width: 95%;
-  display: block;
-  background-color: #212529;
-  height: 400px;
-}
-.checkout h2 {
-  text-align: center;
-  font-family: 'Trispace';
-  text-transform: uppercase;
-  color: #fec229;
-  margin-top: 1rem;
-  font-size: 2rem;
-}
+
 .trash {
   height: 20px;
   /* margin-right: 1rem; */
-  cursor: pointer;
   margin-left: 1.5rem;
+}
+.trash img{
+  cursor: pointer;
+}
+.invisible-btn{
+  background: transparent;
+  border: none;
+  font-size: 0;
 }
 @media screen and (min-width: 1120px) {
   .cart-item-container {
-    width: 65%;
+    width: 100%;
     height: 100%;
   }
   .mycart {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
   }
   .cart-container {
@@ -166,4 +160,14 @@ h1 {
     height: 100vh;
   }
   
+}
+.checkout-btn{
+  padding: 7px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: yellow;
+  margin-bottom: 1rem;
 }

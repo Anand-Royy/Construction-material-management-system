@@ -101,60 +101,114 @@ app.get('/viewsite/:id', (req, res) => {
 
 app.get('/addcartitem/1', (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  db.query('insert into cartitems values(?,?,?)', ['bricks',9,0], (err, results) => {
-    if (err) throw err;
-    else if (results.affectedRows > 0) {
-      res.status(204).send();
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?)',
+    [1, 'bricks', 9, 0, 'Bricks.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
     }
-  });
+  );
 });
 
 app.get('/addcartitem/2', (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  db.query('insert into cartitems values(?,?,?)', ['cement',9,0], (err, results) => {
-    if (err) throw err;
-    else if (results.affectedRows > 0) {
-      res.status(204).send();
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?)',
+    [2, 'cement', 9, 0, 'Cement.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
     }
-  });
+  );
 });
 app.get('/addcartitem/3', (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  db.query('insert into cartitems values(?,?,?)', ['steel',9,0], (err, results) => {
-    if (err) throw err;
-    else if (results.affectedRows > 0) {
-      res.status(204).send();
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?)',
+    [3, 'steel', 9, 0, 'Steel.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
     }
-  });
+  );
 });
 app.get('/addcartitem/4', (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  db.query('insert into cartitems values(?,?,?)', ['sand',9,0], (err, results) => {
-    if (err) throw err;
-    else if (results.affectedRows > 0) {
-      res.status(204).send();
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?)',
+    [4, 'sand', 9, 0, 'Sand.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
     }
-  });
+  );
 });
 
 app.get('/addcartitem/5', (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  db.query('insert into cartitems values(?,?,?)', ['aggregate',9,0], (err, results) => {
-    if (err) throw err;
-    else if (results.affectedRows > 0) {
-      res.status(204).send();
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?)',
+    [5, 'aggregate', 9, 0, 'Aggregate.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
+    }
+  );
+});
+
+// var id = document.getElementById('objectID');
+// console.log(id);
+
+app.get('/cart', (req, res) => {
+  const id = req.params.id;
+  db.query('SELECT * FROM cartitems', (err, results) => {
+    if (!err) {
+      res.render('cart', { results, id: id });
     }
   });
 });
 
-app.get('/cart',(req,res)=>{
-  res.render('cart');
-})
+app.post('/getquantity', async (req, res) => {
+  const { id, quantity } = req.body;
+  let count = 0;
+  for (count = 0; count < id.length; count++) {
+    await db.query(
+      'UPDATE cartitems SET Quantity=Quantity+? WHERE id =?',
+      [quantity[count], id[count]],
+      (err, results) => {
+        if (err) throw err;
+      }
+    );
+  }
+  db.query('UPDATE cartitems SET Total = Cost*Quantity', (err, results) => {
+    if (err) throw err;
+    else {
+      db.query('SELECT * FROM `cartitems`', (err, rows) => {
+        if (err) throw err;
+        else res.render('checkout', { rows });
+      });
+    }
+  });
+});
+
+app.post('/deletecartitem/:id', (req, res) => {
+  const id = req.params.id;
+  db.query('DELETE FROM `cartitems` WHERE id=?', [id], (err, results) => {
+    if (err) throw err;
+    else res.redirect('/cart');
+  });
+});
 
 // app.post('/addsiteimg', (req, res) => {
 //   let sampleFile;

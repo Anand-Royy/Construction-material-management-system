@@ -17,64 +17,50 @@
         <div class='mycart'>
           <h1>CART</h1>
         </div>
-        <!-- cart item -->
-        <div class='cart-item'>
-          <img src='./Images/Bricks2.png' alt='' />
+        <form action='/getquantity' method='POST' enctype='multipart/form-data'>
+          {{#results}}
+            <!-- cart item -->
+            <div class='cart-item'>
+              <img src='./Images/Cart-items/{{this.img}}' alt='' />
 
-          <div class='item-name'>
-            <h3>Bricks</h3>
-          </div>
+              <div class='item-name'>
+                <h3>{{this.Items}}</h3>
+              </div>
 
-          <div class='item-price'>
-            <span>$5</span>
-          </div>
-          <div class='unit'>
-            <input type='number' name='unit' id='unit' />
-            <h3>kg</h3>
-            <img src='./Images/caret-down-solid.svg' alt='' />
-            <div class='dropdown'>
-              <ul>
-                <li>kg</li>
-                <li>g</li>
-              </ul>
+              <div class='item-price'>
+                <span>${{this.Cost}}</span>
+              </div>
+              <div class='unit'>
+                <input type='number' name='id' value='{{this.id}}' hidden />
+                <input type='number' name='quantity' id='unit' />
+                <h3>kg</h3>
+                <img src='./Images/caret-down-solid.svg' alt='' />
+                <div class='dropdown'>
+                  <ul>
+                    <li>kg</li>
+                    <li>g</li>
+                  </ul>
+                </div>
+              </div>
+              <div class='trash'>
+                <input
+                style="z-index=-1;"
+                  class='trash'
+                  type='image'
+                  src='./Images/trash-can-solid.svg'
+                  alt=''
+                  method="GET"
+                  formaction='/deletecartitem/{{this.id}}'
+                />
+              </div>
             </div>
-          </div>
-          <div class='trash'>
-            <img class='trash' src='./Images/trash-can-solid.svg' alt='' />
-          </div>
-        </div>
-        <!-- cart item -->
-        <!-- cart item -->
-        <div class='cart-item'>
-          <img src='./Images/Cement.png' alt='' />
+            <!-- cart item end-->
+          {{/results}}
+          <button formaction="/getquantity" class='checkout-btn'>checkout </button>
+        </form>
 
-          <div class='item-name'>
-            <h3>Cement</h3>
-          </div>
-
-          <div class='item-price'>
-            <span>$5</span>
-          </div>
-          <div class='unit'>
-            <input type='number' name='unit' id='unit' />
-            <h3>kg</h3>
-            <img src='./Images/caret-down-solid.svg' alt='' />
-            <div class='dropdown'>
-              <ul>
-                <li>kg</li>
-                <li>g</li>
-              </ul>
-            </div>
-          </div>
-          <div class='trash'>
-            <img class='trash' src='./Images/trash-can-solid.svg' alt='' />
-          </div>
-        </div>
-        <!-- cart item -->
       </div>
-      <div class='checkout'>
-        <h2>checkout</h2>
-      </div>
-    </div>
+      
+    
   </body>
 </html>
