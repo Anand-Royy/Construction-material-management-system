@@ -1,112 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
- <style>
-  *{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
-  }
-  th{
-   height: 2rem;
-   font-size: 1.5rem;
-  }
-  td{
-   height: 35px;
-   font-size: 1.5rem;
-  }
-  table, th, td {
-  border:1px solid white;
-  text-transform: capitalize;
-  text-align: center;
-  }
-  @media screen and (min-width: 1120px) {
-  .cart-item-container {
-    width: 80%;
-    height: 100%;
-  }
-  .mycart {
-    /* position: absolute; */
-    top: 0;
-  }
-  .cart-container {
-    flex-direction: row;
-  }
-  .cart-item > img {
-    margin-left: 1rem;
-  }
-  .checkout {
-    width: 100%;
-    height: 100vh;
-  }
-  .checkout {
-  width: 100%;
-  display: block;
-  background-color: #212529;
-  height: 100vh
-}
-.checkout h2 {
-  text-align: center;
-  font-family: 'Trispace';
-  text-transform: uppercase;
-  color: #fec229;
-  margin-bottom: 5rem;
-  font-size: 2rem;
-}
-.buy button{
- padding: 7px 20px;
- font-size: 1rem;
- border: none;
- border-radius: 10px;
- background-color: #fec229;
- font-weight: bolder;
- cursor: pointer;
-}
-.buy{
-text-align: center;
-margin-top: 3rem;
-}
-.total{
- text-align: right;
- width: 85%;
- color: white;
- font-size: 1.5rem;
-}
-}
- </style>
-</head>
-<body>
- <div class='checkout'>
-        <h2>checkout</h2>
-        <table style="margin-top:10rem; border-color:white;width:80%; margin: auto; color:white">
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Document</title>
+    <style>
+      *{ padding: 0; margin: 0; box-sizing: border-box; } th{ height: 2rem;
+      font-size: 1.5rem; } td{ height: 35px; font-size: 1.5rem; } table, th, td
+      { border:1px solid white; text-transform: capitalize; text-align: center;
+      } @media screen and (min-width: 1120px) { .cart-item-container { width:
+      80%; height: 100%; } .mycart { /* position: absolute; */ top: 0; }
+      .cart-container { flex-direction: row; } .cart-item > img { margin-left:
+      1rem; } .checkout { width: 100%; height: 100vh; } .checkout { width: 100%;
+      display: block; background-color: #212529; height: 100vh } .checkout h2 {
+      text-align: center; font-family: 'Trispace'; text-transform: uppercase;
+      color: #fec229; margin-bottom: 5rem; font-size: 2rem; } .buy button{
+      padding: 7px 20px; font-size: 1rem; border: none; border-radius: 10px;
+      background-color: #fec229; font-weight: bolder; cursor: pointer; } .buy{
+      text-align: center; margin-top: 3rem; } .total{ text-align: right; width:
+      85%; color: white; font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <div class='checkout'>
+      <h2>checkout</h2>
+      <table
+        style='margin-top:10rem; border-color:white;width:80%; margin: auto; color:white'
+      >
 
-          <tr>
-    <th>Item Name</th>
-    <th>Rate</th>
-    <th>Quantity</th>
-    <th>Price</th>
-  </tr>
+        <tr>
+          <th>Item Name</th>
+          <th>Rate</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
         {{#rows}}
-  <tr>
-    <td>{{this.Items}}</td>
-    <td>{{this.Cost}}</td>
-    <td>{{this.Quantity}}</td>
-    <td>{{this.Total}}</td>
-  </tr>
+          <tr>
+            <td>{{this.Items}}</td>
+            <td>{{this.Cost}}</td>
+            <td>{{this.Quantity}}</td>
+            <td>{{this.Total}}</td>
+          </tr>
         {{/rows}}
 
-        </table>
-        <div class="total">
-         <span>Total:</span>
-         <span>amount</span>
-        </div>
-      <div class="buy">
-       <button>BUY</button>
+      </table>
+      <div class='total'>
+        <span>Total:</span>
+        <span>amount</span>
       </div>
+      <div class='buy'>
+        {{#sid}}
+        <a href='/buy/{{this.sid}}'>
+          <button>BUY</button>
+        </a>
+        {{/sid}}
       </div>
-</body>
+    </div>
+  </body>
 </html>

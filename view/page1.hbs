@@ -12,7 +12,10 @@
       rel='stylesheet'
     />
     <link rel='stylesheet' href='/page1.css' />
-
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'
+    />
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
@@ -26,7 +29,7 @@
   <body>
 
     <!-- Image section -->
-    {{#rows}}
+    {{#sites}}
       <div class='image'>
         <h1>{{this.name}}</h1>
         <img src='/Images/site1.jpg' alt='' />
@@ -47,61 +50,109 @@
           incidunt qui tempore quia perspiciatis dolor maiores! Omnis quam
           doloribus magnam.</p>
       </div>
-    {{/rows}}
-    <!-- Estimate card section -->
 
-    <div class='headings'>
-      <h1>Estimates of materials</h1>
-      <hr class='hr-1' />
-    </div>
+      <!-- Estimate card section -->
 
-    <div class='estimate'>
-      <div class='est_card'>
-        <img src='/Images/Bricks.png' alt='' />
-        <h2 id='name'>Bricks</h2>
-        <h3 id='estimate'>Estimate</h3>
-        <p id='es_p'>120440</p>
-        <h3 id='used'>Used</h3>
-        <p id='us_p'>29440</p>
+      <div class='headings'>
+        <h1>Estimates of materials</h1>
+        <hr class='hr-1' />
       </div>
+    <div class="modal-overlay">
+      <div class="modal-container">
+        <form action="/addestimate" action="POST" enctype="multipart/form-data">
+         
+          <!-- Estimated quantity -->
+          <label for="">Estimated Quantity:</label> <br> <br>
+          <input type='number' name='id' value='{{this.id}}' hidden />
+          <label for="bricks">Bricks :</label>
+          <input type="number" id="brick" name="brickno">
+          <span>kg</span> <br><br>
+          <label for="cement">Cement :</label>
+          <input type="number" id="cement" name="cementno">
+          <span>kg</span> <br><br>
+          <label for="steel">Steel :</label>
+          <input type="number" id="steel" name="steelno">
+          <span>kg</span> <br><br>
+          <label for="sand">Sand :</label>
+          <input type="number" id="sand" name="sandno">
+          <span>kg</span> <br><br>
+          <label for="aggregate">Aggregate :</label>
+          <input type="number" id="aggregate" name="aggregateno">
+          <span>kg</span> <br><br>
+          
+          <br><br>
+          <button type="submit" >Submit</button>
+        </form>
+        <button class="close-btn"><i class="fas fa-times"></i></button>
 
-      <div class='est_card'>
-        <img src='/Images/Cement.png' alt='' />
-        <h2 id='name'>Cement</h2>
-        <h3 id='estimate'>Estimate</h3>
-        <p id='es_p'>120440</p>
-        <h3 id='used'>Used</h3>
-        <p id='us_p'>29440</p>
-      </div>
-
-      <div class='est_card'>
-        <img src='/Images/Steel.png' alt='' />
-        <h2 id='name'>Steel</h2>
-        <h3 id='estimate'>Estimate</h3>
-        <p id='es_p'>120440</p>
-        <h3 id='used'>Used</h3>
-        <p id='us_p'>29440</p>
-      </div>
-
-      <div class='est_card'>
-        <img src='/Images/Sand.png' alt='' />
-        <h2 id='name'>Sand</h2>
-        <h3 id='estimate'>Estimate</h3>
-        <p id='es_p'>120440</p>
-        <h3 id='used'>Used</h3>
-        <p id='us_p'>29440</p>
-      </div>
-
-      <div class='est_card'>
-        <img src='/Images/Aggregate.png' alt='' />
-        <h2 id='name'>Aggregate</h2>
-        <h3 id='estimate'>Estimate</h3>
-        <p id='es_p'>120440</p>
-        <h3 id='used'>Used</h3>
-        <p id='us_p'>29440</p>
       </div>
     </div>
 
+  </div>
+  <div class="add-site">
+    {{!-- <form action="/addsite" method="POST" enctype="multipart/form-data">
+
+    </form> --}}
+    <button class="btn modal-btn">update estimates
+    {{#if checkmesg}}
+    <h3>Duplicate site!</h3>
+    {{/if}}
+    {{#if mesg}}
+    <h3>Data Inserted</h3>
+    {{/if}}
+  </div>
+
+
+{{!-- {{#estimates}} --}}
+      <div class='estimate'>
+
+        <div class='est_card'>
+          <img src='/Images/Bricks.png' alt='' />
+          <h2 id='name'>Bricks</h2>
+          <h3 id='estimate'>Estimate</h3>
+          <p id='es_p'>{{this.Bricks}}</p>
+          <h3 id='used'>Stocks</h3>
+          <p id='us_p'>{{this.brickno}}</p>
+        </div>
+
+        <div class='est_card'>
+          <img src='/Images/Cement.png' alt='' />
+          <h2 id='name'>Cement</h2>
+          <h3 id='estimate'>Estimate</h3>
+          <p id='es_p'>{{this.Cement}}</p>
+          <h3 id='used'>Stocks</h3>
+          <p id='us_p'>{{this.cementno}}</p>
+        </div>
+
+        <div class='est_card'>
+          <img src='/Images/Steel.png' alt='' />
+          <h2 id='name'>Steel</h2>
+          <h3 id='estimate'>Estimate</h3>
+          <p id='es_p'>{{this.Steel}}</p>
+          <h3 id='used'>Stocks</h3>
+          <p id='us_p'>{{this.steelno}}</p>
+        </div>
+
+        <div class='est_card'>
+          <img src='/Images/Sand.png' alt='' />
+          <h2 id='name'>Sand</h2>
+          <h3 id='estimate'>Estimate</h3>
+          <p id='es_p'>{{this.Sand}}</p>
+          <h3 id='used'>Stocks</h3>
+          <p id='us_p'>{{this.sandno}}</p>
+        </div>
+
+        <div class='est_card'>
+          <img src='/Images/Aggregate.png' alt='' />
+          <h2 id='name'>Aggregate</h2>
+          <h3 id='estimate'>Estimate</h3>
+          <p id='es_p'>{{this.Aggregate}}</p>
+          <h3 id='used'>Stocks</h3>
+          <p id='us_p'>{{this.aggregteno}}</p>
+        </div>
+      </div>
+      {{!-- {{/estimates}} --}}
+    
     <!-- Current status section -->
 
     <div class='headings'>
@@ -112,10 +163,9 @@
       <div class='curr_card'>
         <img src='/Images/Bricks.png' alt='' />
         <h3>Bricks</h3>
-        <h4>Stock</h4>
-        <p>1245</p>
+        
 
-        <a href='/addcartitem/1'>
+        <a href='/addcartitem/1/{{this.id}}'>
           <button class='addcart'>ADD+</button>
         </a>
       </div>
@@ -123,12 +173,11 @@
       <div class='curr_card'>
         <img src='/Images/Cement.png' alt='' />
         <h3>Cement</h3>
-        <h4>Stock</h4>
-        <p>1245</p>
+        
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
-        <a href='/addcartitem/2'>
+        <a href='/addcartitem/2/{{this.id}}'>
           <button class='addcart'>ADD+</button>
         </a>
 
@@ -137,13 +186,12 @@
       <div class='curr_card'>
         <img src='/Images/Steel.png' alt='' />
         <h3>Steel</h3>
-        <h4>Stock</h4>
-        <p>1245</p>
+        
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
 
-        <a href='/addcartitem/3'>
+        <a href='/addcartitem/3/{{this.id}}'>
           <button class='addcart'>ADD+</button>
         </a>
 
@@ -152,13 +200,12 @@
       <div class='curr_card'>
         <img src='/Images/Sand.png' alt='' />
         <h3>Sand</h3>
-        <h4>Stock</h4>
-        <p>1245</p>
+        
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
 
-        <a href='/addcartitem/4'>
+        <a href='/addcartitem/4/{{this.id}}'>
           <button class='addcart'>ADD+</button>
         </a>
 
@@ -167,26 +214,26 @@
       <div class='curr_card'>
         <img src='/Images/Aggregate.png' alt='' />
         <h3>Aggregate</h3>
-        <h4>Stock</h4>
-        <p>1245</p>
+       
         <!-- <a href="">
                 <img src="./Images/Add_to_cart.png" alt="cart_icon">
             </a> -->
         <a href='/addcartitem'>
-          <a href='/addcartitem/5'>
+          <a href='/addcartitem/5/{{this.id}}'>
             <button class='addcart'>ADD+</button>
           </a>
         </a>
 
       </div>
+      {{/sites}}
 
-    </div>{{#rows}}
-    <div class='cartbtndiv'>
-      <a href='/cart'>
-        <button class='cartbtn'>Add to Cart</button>
-      </a>
-    </div>
-    {{/rows}}
+    </div>{{#sites}}
+      <div class='cartbtndiv'>
+        <a href='/cart/{{this.id}}'>
+          <button class='cartbtn'>Add to Cart</button>
+        </a>
+      </div>
+    {{/sites}}
 
     <!-- Footer -->
 
@@ -225,6 +272,16 @@
       </p>
     </div>
     <script src='/site.js'></script>
+
+    <script
+      src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
+    ></script>
+    <script
+      src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'
+    ></script>
+    <script
+      src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'
+    ></script>
   </body>
 
 </html>

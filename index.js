@@ -62,29 +62,23 @@ app.get('/addsite', (req, res) => {
       if (results.length > 0) {
         res.redirect('/');
       } else {
+        
         // insert query
-        let qry2 = 'insert into sites values(?,?,?,?,?,?,?,?,?,?)';
-        db.query(
-          qry2,
-          [
-            id,
-            name,
-            address,
-            date,
-            brickno,
-            cementno,
-            steelno,
-            sandno,
-            aggregateno,
-            img,
-          ],
-          (err, results) => {
-            if (err) throw err;
-            else if (results.affectedRows > 0) {
-              res.redirect('/');
+        let qry2 =
+          'INSERT INTO `sites`(`id`, `name`, `address`, `site_date`) VALUES (?,?,?,?)';
+        db.query(qry2, [id, name, address, date], (err, results) => {
+          if (err) throw err;
+          db.query(
+            'INSERT INTO `estimates`(`SID`, `Bricks`, `Cement`, `Steel`, `Sand`, `Aggregate`) VALUES (?,?,?,?,?,?)',
+            [id, brickno, cementno, steelno, sandno, aggregateno],
+            (err, rows) => {
+              if (err) throw err;
+              else if (results.affectedRows > 0) {
+                res.redirect('/');
+              }
             }
-          }
-        );
+          );
+        });
       }
     }
   });
@@ -92,58 +86,23 @@ app.get('/addsite', (req, res) => {
 
 app.get('/viewsite/:id', (req, res) => {
   const id = req.params.id;
-  db.query('SELECT * FROM sites WHERE id =?', [id], (err, rows) => {
-    if (!err) {
-      res.render('page1', { rows });
-    }
-  });
-});
-
-app.get('/addcartitem/1', (req, res) => {
-  const id = req.params.id;
   db.query(
-    'insert into cartitems values(?,?,?,?,?,?)',
-    [1, 'bricks', 9, 0, 'Bricks.png', 0],
-    (err, results) => {
-      if (err) throw err;
-      else if (results.affectedRows > 0) {
-        res.status(204).send();
+    'SELECT * FROM sites join estimates on sites.id=estimates.sid WHERE sites.id =?',
+    [id],
+    (err, sites) => {
+      if (!err) {
+        console.log(sites);
+        res.render('page1', { sites });
       }
     }
   );
 });
 
-app.get('/addcartitem/2', (req, res) => {
+app.get('/addcartitem/1/:id', (req, res) => {
   const id = req.params.id;
   db.query(
-    'insert into cartitems values(?,?,?,?,?,?)',
-    [2, 'cement', 9, 0, 'Cement.png', 0],
-    (err, results) => {
-      if (err) throw err;
-      else if (results.affectedRows > 0) {
-        res.status(204).send();
-      }
-    }
-  );
-});
-app.get('/addcartitem/3', (req, res) => {
-  const id = req.params.id;
-  db.query(
-    'insert into cartitems values(?,?,?,?,?,?)',
-    [3, 'steel', 9, 0, 'Steel.png', 0],
-    (err, results) => {
-      if (err) throw err;
-      else if (results.affectedRows > 0) {
-        res.status(204).send();
-      }
-    }
-  );
-});
-app.get('/addcartitem/4', (req, res) => {
-  const id = req.params.id;
-  db.query(
-    'insert into cartitems values(?,?,?,?,?,?)',
-    [4, 'sand', 9, 0, 'Sand.png', 0],
+    'insert into cartitems values(?,?,?,?,?,?,?)',
+    [id, 1, 'bricks', 9, 0, 'Bricks.png', 0],
     (err, results) => {
       if (err) throw err;
       else if (results.affectedRows > 0) {
@@ -153,11 +112,51 @@ app.get('/addcartitem/4', (req, res) => {
   );
 });
 
-app.get('/addcartitem/5', (req, res) => {
+app.get('/addcartitem/2/:id', (req, res) => {
   const id = req.params.id;
   db.query(
-    'insert into cartitems values(?,?,?,?,?,?)',
-    [5, 'aggregate', 9, 0, 'Aggregate.png', 0],
+    'insert into cartitems values(?,?,?,?,?,?,?)',
+    [id, 2, 'cement', 9, 0, 'Cement.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
+    }
+  );
+});
+app.get('/addcartitem/3/:id', (req, res) => {
+  const id = req.params.id;
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?,?)',
+    [id, 3, 'steel', 9, 0, 'Steel.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
+    }
+  );
+});
+app.get('/addcartitem/4/:id', (req, res) => {
+  const id = req.params.id;
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?,?)',
+    [id, 4, 'sand', 9, 0, 'Sand.png', 0],
+    (err, results) => {
+      if (err) throw err;
+      else if (results.affectedRows > 0) {
+        res.status(204).send();
+      }
+    }
+  );
+});
+
+app.get('/addcartitem/5/:id', (req, res) => {
+  const id = req.params.id;
+  db.query(
+    'insert into cartitems values(?,?,?,?,?,?,?)',
+    [id, 5, 'aggregate', 9, 0, 'Aggregate.png', 0],
     (err, results) => {
       if (err) throw err;
       else if (results.affectedRows > 0) {
@@ -170,22 +169,35 @@ app.get('/addcartitem/5', (req, res) => {
 // var id = document.getElementById('objectID');
 // console.log(id);
 
-app.get('/cart', (req, res) => {
+app.get('/cart/:id', (req, res) => {
   const id = req.params.id;
+  console.log(id);
   db.query('SELECT * FROM cartitems', (err, results) => {
     if (!err) {
-      res.render('cart', { results, id: id });
+      db.query('SELECT sid FROM `cartitems` LIMIT 1', (req, sid) => {
+        res.render('cart', { results, sid });
+      });
     }
   });
 });
 
-app.post('/getquantity', async (req, res) => {
+app.post('/getquantity/:id', async (req, res) => {
+  const sid = req.params.id;
+  console.log(sid);
   const { id, quantity } = req.body;
   let count = 0;
+  let items = ['brickno', 'cementno', 'steelno', 'sandno', 'aggregteno'];
   for (count = 0; count < id.length; count++) {
     await db.query(
       'UPDATE cartitems SET Quantity=Quantity+? WHERE id =?',
       [quantity[count], id[count]],
+      (err, results) => {
+        if (err) throw err;
+      }
+    );
+    db.query(
+      'update sites set ?? = ? where id=?',
+      [items[id[count] - 1], quantity[count], sid],
       (err, results) => {
         if (err) throw err;
       }
@@ -196,8 +208,22 @@ app.post('/getquantity', async (req, res) => {
     else {
       db.query('SELECT * FROM `cartitems`', (err, rows) => {
         if (err) throw err;
-        else res.render('checkout', { rows });
+        else {
+          db.query('SELECT sid FROM `cartitems` LIMIT 1', (req, sid) => {
+            res.render('checkout', { rows, sid });
+          });
+        }
       });
+    }
+  });
+});
+
+app.get('/buy/:id', (req, res) => {
+  const sid = req.params.id;
+  db.query('DELETE FROM `cartitems`', (err, rows) => {
+    if (err) throw err;
+    else {
+      res.redirect('/viewsite/' + sid);
     }
   });
 });
@@ -206,8 +232,25 @@ app.post('/deletecartitem/:id', (req, res) => {
   const id = req.params.id;
   db.query('DELETE FROM `cartitems` WHERE id=?', [id], (err, results) => {
     if (err) throw err;
-    else res.redirect('/cart');
+    else res.redirect('/cart/' + id);
   });
+});
+
+// app.get('/addestimate',(req,res)=>{
+//   res.redirect('/')
+// })
+
+app.get('/addestimate', (req, res) => {
+  const { id, brickno, cementno, steelno, sandno, aggregateno } = req.query;
+  console.log(req.query);
+  db.query(
+    'UPDATE `estimates` SET `Bricks`= ?,`Cement`= ? ,`Steel`= ? ,`Sand`= ? ,`Aggregate`= ?  WHERE SID = ?',
+    [brickno, cementno, steelno, sandno, aggregateno, id],
+    (err, results) => {
+      if (err) throw err;
+      else res.redirect('/viewsite/' + id);
+    }
+  );
 });
 
 // app.post('/addsiteimg', (req, res) => {

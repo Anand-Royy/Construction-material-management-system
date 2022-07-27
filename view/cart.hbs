@@ -8,7 +8,7 @@
       href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'
     />
 
-    <link rel='stylesheet' href='cart.css' />
+    <link rel='stylesheet' href='/cart.css' />
     <title>Document</title>
   </head>
   <body>
@@ -21,7 +21,7 @@
           {{#results}}
             <!-- cart item -->
             <div class='cart-item'>
-              <img src='./Images/Cart-items/{{this.img}}' alt='' />
+              <img src='/Images/Cart-items/{{this.img}}' alt='' />
 
               <div class='item-name'>
                 <h3>{{this.Items}}</h3>
@@ -34,7 +34,7 @@
                 <input type='number' name='id' value='{{this.id}}' hidden />
                 <input type='number' name='quantity' id='unit' />
                 <h3>kg</h3>
-                <img src='./Images/caret-down-solid.svg' alt='' />
+                <img src='/Images/caret-down-solid.svg' alt='' />
                 <div class='dropdown'>
                   <ul>
                     <li>kg</li>
@@ -47,7 +47,7 @@
                 style="z-index=-1;"
                   class='trash'
                   type='image'
-                  src='./Images/trash-can-solid.svg'
+                  src='/Images/trash-can-solid.svg'
                   alt=''
                   method="GET"
                   formaction='/deletecartitem/{{this.id}}'
@@ -56,7 +56,10 @@
             </div>
             <!-- cart item end-->
           {{/results}}
-          <button formaction="/getquantity" class='checkout-btn'>checkout </button>
+
+          {{#sid}}
+          <button formaction="/getquantity/{{this.sid}}" class='checkout-btn'>checkout </button>
+          {{/sid}}
         </form>
 
       </div>
